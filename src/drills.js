@@ -62,17 +62,3 @@ function getTotalCostOfEachCategory() {
 }
 
 // getTotalCostOfEachCategory();
-
-function costPerCategory() {
-    knexInstance
-        .select('category')
-        .count('price as total')
-        .from('shopping_list')
-        .groupBy('category')
-        .then(result => {
-            console.log('COST PER CATEGORY')
-            console.log(result)
-        })
-}
-
-costPerCategory();
